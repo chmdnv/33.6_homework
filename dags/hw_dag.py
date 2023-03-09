@@ -9,7 +9,7 @@ from modules.pipeline import pipeline
 from modules.predict import predict
 
 
-path = os.path.expanduser('~/airflow_hw')
+path = os.path.expanduser('~/PycharmProjects/33.6_homework')
 # Добавим путь к коду проекта в переменную окружения, чтобы он был доступен python-процессу
 os.environ['PROJECT_PATH'] = path
 # Добавим путь к коду проекта в $PATH, чтобы импортировать функции

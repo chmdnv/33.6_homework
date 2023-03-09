@@ -6,7 +6,7 @@ import os
 import pandas as pd
 
 
-path = os.environ.get('PROJECT_PATH', '.')
+path = os.environ.get('PROJECT_PATH', '~/PycharmProjects/33.6_homework')
 
 
 def predict():

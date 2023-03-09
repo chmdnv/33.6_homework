@@ -18,7 +18,7 @@ from sklearn.svm import SVC
 # Укажем путь к файлам проекта:
 # -> $PROJECT_PATH при запуске в Airflow
 # -> иначе - текущая директория при локальном запуске
-path = os.environ.get('PROJECT_PATH', 'C:\\Users\\Arseniy\\Documents\\Skillbox\\33.6')
+path = os.environ.get('PROJECT_PATH', '~/PycharmProjects/33.6_homework'')
 
 
 def filter_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -67,7 +67,7 @@ def create_features(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def pipeline() -> None:
-    df = pd.read_csv(f'{path}\\data\\train\\homework.csv')
+    df = pd.read_csv(f'{path}/data/train/homework.csv')
 
     X = df.drop('price_category', axis=1)
     y = df['price_category']
