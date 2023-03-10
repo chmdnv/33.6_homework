@@ -19,7 +19,7 @@ args = {
     'owner': 'airflow',
     'start_date': dt.datetime(2023, 3, 1),
     'retries': 1,
-    'retry_delay': dt.timedelta(minutes=10),
+    'retry_delay': dt.timedelta(minutes=1),
     'depends_on_past': False,
 }
 
