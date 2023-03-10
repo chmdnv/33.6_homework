@@ -2,18 +2,18 @@ import datetime as dt
 import os
 import sys
 
+path = os.path.expanduser('~/PycharmProjects/33.6_homework')
+# Добавим путь к коду проекта в переменную окружения, чтобы он был доступен python-процессу
+os.environ['PROJECT_PATH'] = path
+# Добавим путь к коду проекта в $PATH, чтобы импортировать функции
+sys.path.insert(0, path)
+
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 
 from modules.pipeline import pipeline
 from modules.predict import predict
 
-
-path = os.path.expanduser('~/PycharmProjects/33.6_homework')
-# Добавим путь к коду проекта в переменную окружения, чтобы он был доступен python-процессу
-os.environ['PROJECT_PATH'] = path
-# Добавим путь к коду проекта в $PATH, чтобы импортировать функции
-sys.path.insert(0, path)
 
 args = {
     'owner': 'airflow',

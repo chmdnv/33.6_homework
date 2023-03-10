@@ -18,7 +18,10 @@ from sklearn.svm import SVC
 # Укажем путь к файлам проекта:
 # -> $PROJECT_PATH при запуске в Airflow
 # -> иначе - текущая директория при локальном запуске
-path = os.environ.get('PROJECT_PATH', '~/PycharmProjects/33.6_homework')
+path = os.environ.get(
+    'PROJECT_PATH',
+    os.path.expanduser('~/PycharmProjects/33.6_homework')
+)
 
 
 def filter_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -99,8 +102,8 @@ def pipeline() -> None:
 
     models = [
         LogisticRegression(solver='liblinear'),
-        RandomForestClassifier(),
-        SVC()
+        # RandomForestClassifier(),
+        # SVC()
     ]
 
     best_score = .0

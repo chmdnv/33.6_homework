@@ -1,20 +1,21 @@
 import json
 from datetime import datetime
-
 import dill
 import os
 import pandas as pd
 
 
-path = os.environ.get('PROJECT_PATH', '~/PycharmProjects/33.6_homework')
-
-
 def predict():
+    path = os.environ.get(
+        'PROJECT_PATH',
+        os.path.expanduser('~/PycharmProjects/33.6_homework')
+    )
+
     model_file = max(
         [file for file in os.listdir(f'{path}/data/models') if file.endswith('.pkl')]
     )
 
-    with open(model_file, 'rb') as file:
+    with open(f'{path}/data/models/{model_file}', 'rb') as file:
         model = dill.load(file)
 
     test = []
