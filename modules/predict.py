@@ -39,8 +39,10 @@ def predict():
     test_df['price_category'] = model.predict(test_df)
 
     # запись результатов в csv
-    csv_file_name = f"prediction_{model_file.rstrip('.pkl').split('_')}.csv"
-    test_df.to_csv(f"{path}/data/predictions/{csv_file_name}")
+    csv_file_name = f"prediction_{model_file.rstrip('.pkl').split('_')[2]}.csv"
+    test_df[['id', 'price_category']].to_csv(
+        f"{path}/data/predictions/{csv_file_name}"
+    )
 
 
 if __name__ == '__main__':
