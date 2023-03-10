@@ -17,9 +17,9 @@ from modules.predict import predict
 
 args = {
     'owner': 'airflow',
-    'start_date': dt.datetime(2022, 6, 10),
+    'start_date': dt.datetime(2023, 3, 1),
     'retries': 1,
-    'retry_delay': dt.timedelta(minutes=1),
+    'retry_delay': dt.timedelta(minutes=10),
     'depends_on_past': False,
 }
 

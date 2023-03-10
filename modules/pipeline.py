@@ -102,8 +102,8 @@ def pipeline() -> None:
 
     models = [
         LogisticRegression(solver='liblinear'),
-        # RandomForestClassifier(),
-        # SVC()
+        RandomForestClassifier(),
+        SVC()
     ]
 
     best_score = .0
